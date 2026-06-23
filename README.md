@@ -158,4 +158,22 @@ I enjoy building everything from **low-level assembly games** to **AI-powered sy
 
 ---
 
+## PreserveMy.World Day 1 Deliverables
+
+### Blog Post
+What I Learned About 3D Reconstruction and NeRF for PreserveMy.World
+
+Medium Article:
+https://medium.com/@mhadi7497/what-i-learned-about-3d-reconstruction-and-nerf-for-preservemy-world-80b7d6da832d
+
+### Experiment
+- Tiny NeRF reproduction in Google Colab
+- Output screenshots included in `/experiments/outputs`
+- Notebook included in `/experiments/tiny_nerf.ipynb`
+
+### Research
+- 3D Reconstruction Methods
+- NeRF (Neural Radiance Fields)
+- Structure from Motion (SfM)
+
 ⭐ *If you like my work, consider giving a star to my repositories!*
