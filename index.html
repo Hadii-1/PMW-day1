@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Hadi — Software Engineer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== CURSOR GLOW ========== -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">MH<span class="accent">.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="home" class="hero">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Muhammad Hadi</h1>
+      <div class="hero-title-wrap">
+        <span class="hero-title-static">I build&nbsp;</span>
+        <span class="hero-typed" id="heroTyped"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+      <p class="hero-summary">
+        4th-semester CS student at FAST-NUCES skilled in C++, Java, Python &amp; x86 Assembly.
+        I craft software systems, game engines &amp; data-driven applications.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <i class="ph ph-rocket-launch"></i> View Projects
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <i class="ph ph-envelope"></i> Contact Me
+        </a>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>Scroll down</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-label">01 / About</div>
+      <h2 class="section-title reveal">About Me</h2>
+
+      <div class="about-grid">
+        <!-- Profile Card -->
+        <div class="profile-col reveal">
+          <div class="profile-card">
+            <div class="profile-ring-wrapper">
+              <div class="orbit-ring">
+                <span class="orbit-icon" style="--i:0"><i class="ph ph-brain"></i></span>
+                <span class="orbit-icon" style="--i:1"><i class="ph ph-code"></i></span>
+                <span class="orbit-icon" style="--i:2"><i class="ph ph-database"></i></span>
+                <span class="orbit-icon" style="--i:3"><i class="ph ph-cpu"></i></span>
+                <span class="orbit-icon" style="--i:4"><i class="ph ph-git-branch"></i></span>
+                <span class="orbit-icon" style="--i:5"><i class="ph ph-terminal"></i></span>
+              </div>
+              <div class="profile-img-wrap">
+                <!-- Replace the src with your actual photo URL -->
+                <img
+                  src="hadi.png"
+                  alt="Muhammad Hadi"
+                  class="profile-img"
+                  id="profileImg"
+                />
+              </div>
+            </div>
+            <div class="status-badge">
+              <span class="status-dot"></span> Available for Opportunities
+            </div>
+          </div>
+
+          <!-- Stats counters -->
+          <div class="about-counters">
+            <div class="counter-item">
+              <span class="counter-num" data-target="7">0</span>
+              <span class="counter-label">Projects</span>
+            </div>
+            <div class="counter-item">
+              <span class="counter-num" data-target="12">0</span>
+              <span class="counter-label">Technologies</span>
+            </div>
+            <div class="counter-item">
+              <span class="counter-num" data-target="1">0</span>
+              <span class="counter-label">Year Exp.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="about-bio reveal">
+          <p class="about-lead">
+            I'm a Computer Science student at <span class="accent-text">FAST-NUCES, Islamabad</span>,
+            currently in my 4th semester and deeply passionate about software engineering at every layer of the stack.
+          </p>
+          <p>
+            My work spans low-level systems programming in x86 Assembly and C++, object-oriented
+            application design in Java, and data-driven solutions in Python. I enjoy solving hard algorithmic
+            problems and turning them into real, working systems — from city-scale AI simulations to
+            arcade games running in the terminal.
+          </p>
+          <p>
+            I'm actively seeking a software engineering internship where I can contribute meaningfully
+            and grow alongside experienced engineers.
+          </p>
+
+          <div class="about-tags">
+            <span class="tag">Object-Oriented Design</span>
+            <span class="tag">Algorithms &amp; DSA</span>
+            <span class="tag">Low-Level Programming</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">Game Development</span>
+            <span class="tag">Data Analysis</span>
+          </div>
+
+          <div class="about-links">
+            <a href="mailto:mhadi7497@gmail.com" class="about-link">
+              <i class="ph ph-envelope-simple"></i> mhadi7497@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/hadi-sajjad" target="_blank" class="about-link">
+              <i class="ph ph-linkedin-logo"></i> LinkedIn
+            </a>
+            <a href="https://github.com/Hadii-1/" target="_blank" class="about-link">
+              <i class="ph ph-github-logo"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-label">02 / Skills</div>
+      <h2 class="section-title reveal">Technical Skills</h2>
+      <p class="section-subtitle reveal">Technologies and tools I work with</p>
+
+      <div class="skills-grid">
+
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title"><i class="ph ph-code"></i> Languages</h3>
+          <div class="skill-pills">
+            <div class="skill-pill" data-level="90">
+              <span>C++</span>
+              <div class="pill-bar"><div class="pill-fill" data-pct="90"></div></div>
+            </div>
+            <div class="skill-pill" data-level="85">
+              <span>Python</span>
+              <div class="pill-bar"><div class="pill-fill" data-pct="85"></div></div>
+            </div>
+            <div class="skill-pill" data-level="80">
+              <span>Java</span>
+              <div class="pill-bar"><div class="pill-fill" data-pct="80"></div></div>
+            </div>
+            <div class="skill-pill" data-level="70">
+              <span>x86 MASM Assembly</span>
+              <div class="pill-bar"><div class="pill-fill" data-pct="70"></div></div>
+            </div>
+            <div class="skill-pill" data-level="75">
+              <span>HTML / CSS</span>
+              <div class="pill-bar"><div class="pill-fill" data-pct="75"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title"><i class="ph ph-package"></i> Libraries &amp; Frameworks</h3>
+          <div class="skill-pills">
+            <div class="skill-pill"><span>SFML</span><div class="pill-bar"><div class="pill-fill" data-pct="85"></div></div></div>
+            <div class="skill-pill"><span>JavaFX</span><div class="pill-bar"><div class="pill-fill" data-pct="75"></div></div></div>
+            <div class="skill-pill"><span>Scikit-Learn</span><div class="pill-bar"><div class="pill-fill" data-pct="72"></div></div></div>
+            <div class="skill-pill"><span>NumPy</span><div class="pill-bar"><div class="pill-fill" data-pct="80"></div></div></div>
+            <div class="skill-pill"><span>Pandas</span><div class="pill-bar"><div class="pill-fill" data-pct="80"></div></div></div>
+            <div class="skill-pill"><span>Matplotlib</span><div class="pill-bar"><div class="pill-fill" data-pct="75"></div></div></div>
+            <div class="skill-pill"><span>Tkinter</span><div class="pill-bar"><div class="pill-fill" data-pct="70"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title"><i class="ph ph-database"></i> Databases</h3>
+          <div class="skill-pills">
+            <div class="skill-pill"><span>SQLite</span><div class="pill-bar"><div class="pill-fill" data-pct="75"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title"><i class="ph ph-wrench"></i> Tools &amp; Technologies</h3>
+          <div class="skill-pills">
+            <div class="skill-pill"><span>REST APIs</span><div class="pill-bar"><div class="pill-fill" data-pct="80"></div></div></div>
+            <div class="skill-pill"><span>Git / GitHub</span><div class="pill-bar"><div class="pill-fill" data-pct="85"></div></div></div>
+            <div class="skill-pill"><span>OOP Design</span><div class="pill-bar"><div class="pill-fill" data-pct="90"></div></div></div>
+            <div class="skill-pill"><span>Algorithms &amp; DSA</span><div class="pill-bar"><div class="pill-fill" data-pct="88"></div></div></div>
+            <div class="skill-pill"><span>MVC Architecture</span><div class="pill-bar"><div class="pill-fill" data-pct="75"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title"><i class="ph ph-brain"></i> Machine Learning</h3>
+          <div class="skill-pills">
+            <div class="skill-pill"><span>Supervised Learning</span><div class="pill-bar"><div class="pill-fill" data-pct="75"></div></div></div>
+            <div class="skill-pill"><span>Unsupervised Learning</span><div class="pill-bar"><div class="pill-fill" data-pct="72"></div></div></div>
+            <div class="skill-pill"><span>Linear Regression</span><div class="pill-bar"><div class="pill-fill" data-pct="78"></div></div></div>
+            <div class="skill-pill"><span>Logistic Regression</span><div class="pill-bar"><div class="pill-fill" data-pct="75"></div></div></div>
+            <div class="skill-pill"><span>K-Nearest Neighbours (KNN)</span><div class="pill-bar"><div class="pill-fill" data-pct="74"></div></div></div>
+            <div class="skill-pill"><span>K-Means++ Clustering</span><div class="pill-bar"><div class="pill-fill" data-pct="80"></div></div></div>
+            <div class="skill-pill"><span>Decision Trees</span><div class="pill-bar"><div class="pill-fill" data-pct="78"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title"><i class="ph ph-graph"></i> CS Concepts</h3>
+          <div class="skill-pills">
+            <div class="skill-pill"><span>Graph Algorithms</span><div class="pill-bar"><div class="pill-fill" data-pct="85"></div></div></div>
+            <div class="skill-pill"><span>Custom Data Structures</span><div class="pill-bar"><div class="pill-fill" data-pct="88"></div></div></div>
+            <div class="skill-pill"><span>Game Development</span><div class="pill-bar"><div class="pill-fill" data-pct="82"></div></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-label">03 / Experience</div>
+      <h2 class="section-title reveal">Experience</h2>
+
+      <div class="timeline">
+
+        <!-- PreserveMy.World Internship (current) -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-date"><i class="ph ph-calendar"></i> Jun 2026 – Present</span>
+              <span class="timeline-badge timeline-badge-active">Current · 1 mo</span>
+            </div>
+            <h3 class="timeline-title">Intern</h3>
+            <p class="timeline-org"><i class="ph ph-buildings"></i> PreserveMy.World — Remote</p>
+            <ul class="timeline-desc">
+              <li>Selected for the <strong>PreserveMy.World × TechRealm</strong> programme — applying AI and digital tools (3D reconstruction, photography, research, and storytelling) to document and preserve cultural heritage.</li>
+              <li>Working across the programme track to build real heritage-preservation projects using cutting-edge digital methods.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">AI Tools</span>
+              <span class="tag">3D Reconstruction</span>
+              <span class="tag">Cultural Heritage</span>
+              <span class="tag">Digital Storytelling</span>
+              <span class="tag">Remote</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRCS Volunteer -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-date"><i class="ph ph-calendar"></i> Aug 2025 – Dec 2025</span>
+              <span class="timeline-badge">Volunteer</span>
+            </div>
+            <h3 class="timeline-title">Civic Engagement Volunteer</h3>
+            <p class="timeline-org"><i class="ph ph-building"></i> Pakistan Red Crescent Society (PRCS) — Islamabad, Pakistan</p>
+            <ul class="timeline-desc">
+              <li>Executed an 8-week community initiative, driving tree-plantation campaigns and conducting field interviews on socioeconomic issues.</li>
+              <li>Distributed road safety gear and retail starter kits to marginalized individuals to encourage self-reliance and civic responsibility.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">Community Service</span>
+              <span class="tag">Civic Leadership</span>
+              <span class="tag">Field Research</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION ========== -->
+  <section id="education" class="section section-alt">
+    <div class="container">
+      <div class="section-label">04 / Education</div>
+      <h2 class="section-title reveal">Education</h2>
+
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <div class="edu-icon"><i class="ph ph-graduation-cap"></i></div>
+          <div class="edu-content">
+            <span class="edu-date">Aug 2024 – Jun 2028</span>
+            <h3 class="edu-degree">Bachelor of Science in Computer Science</h3>
+            <p class="edu-inst">National University of Computer and Emerging Sciences (FAST-NUCES)</p>
+            <p class="edu-loc"><i class="ph ph-map-pin"></i> Islamabad, Pakistan</p>
+            <div class="edu-tags">
+              <span class="tag">4th Semester</span>
+              <span class="tag">CS Core</span>
+              <span class="tag">Algorithms</span>
+              <span class="tag">Systems Programming</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-label">05 / Projects</div>
+      <h2 class="section-title reveal">Projects</h2>
+      <p class="section-subtitle reveal">Things I've built — from AI simulations to arcade games</p>
+
+      <div class="projects-grid">
+
+        <!-- CityMind -->
+        <div class="project-card reveal" data-tilt>
+          <div class="project-img">
+            <img src="cityMind.jpg" alt="">
+            <div class="project-overlay">
+              <span class="project-type">AI / Simulation</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">CityMind</h3>
+            <p class="project-tagline">AI-Powered Urban Intelligence System</p>
+            <p class="project-desc">Smart-city simulation using a shared graph model for real-time urban decision making. Integrates CSP, Kruskal's MST, Dijkstra, Genetic Algorithms, and A*. Features from-scratch K-Means clustering and Decision Tree models.</p>
+            <div class="project-tech">
+              <span>Python</span><span>NetworkX</span><span>A*</span>
+              <span>Genetic Algorithms</span><span>Machine Learning</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Hadii-1/CityMind-AI" class="btn btn-sm btn-outline"><i class="ph ph-github-logo"></i> GitHub</a>
+              <a href="https://www.linkedin.com/posts/hadi-sajjad_artificialintelligence-python-machinelearning-ugcPost-7463902746941747200-cG4z/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEIg0m4B3nRXk6yN6s4DbVstqR1NiS8ntxI" class="btn btn-sm btn-accent"><i class="ph ph-arrow-square-out"></i> Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Xonix -->
+        <div class="project-card reveal" data-tilt>
+          <div class="project-img">
+            <img src="xonix.png" alt="">
+            <div class="project-overlay">
+              <span class="project-type">Game Dev / C++</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Xonix</h3>
+            <p class="project-tagline">2D Multiplayer Territory Capture Game</p>
+            <p class="project-desc">Arcade-style grid-based territory capture game with flood-fill algorithm across a 25×40 grid, advanced enemy AI using trigonometric pathfinding, local 2-player mode, persistent leaderboard, and collectible power-ups.</p>
+            <div class="project-tech">
+              <span>C++</span><span>SFML</span><span>Flood-Fill</span>
+              <span>Trig Pathfinding</span><span>File I/O</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Hadii-1/Xonix-Remake" class="btn btn-sm btn-outline"><i class="ph ph-github-logo"></i> GitHub</a>
+              <a href="https://www.linkedin.com/posts/hadi-sajjad_cplusplus-sfml-gamedevelopment-activity-7419411294128275456-uTsT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEIg0m4B3nRXk6yN6s4DbVstqR1NiS8ntxI" class="btn btn-sm btn-accent"><i class="ph ph-arrow-square-out"></i> Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Iron Nexus -->
+        <div class="project-card reveal" data-tilt>
+          <div class="project-img">
+            <img src="datastructures.jpg" alt="">
+            <div class="project-overlay">
+              <span class="project-type">Systems / C++</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">The Iron Nexus</h3>
+            <p class="project-tagline">Real-Time Railway Management System</p>
+            <p class="project-desc">Built from scratch with 7 custom data structures (no STL): AVL Trees, Graphs, Hash Tables, BSTs, Stacks, and Min-Heaps. Features Dijkstra on a 15-station weighted graph and O(1) seat booking with full file persistence.</p>
+            <div class="project-tech">
+              <span>C++</span><span>AVL Trees</span><span>Dijkstra</span>
+              <span>Hash Tables</span><span>Custom DSA</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Hadii-1/Iron-Nexus-Railway-System" class="btn btn-sm btn-outline"><i class="ph ph-github-logo"></i> GitHub</a>
+              <a href="https://www.linkedin.com/posts/hadi-sajjad_datastructures-cplusplus-systemsengineering-activity-7469961475667963904-pjji?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEIg0m4B3nRXk6yN6s4DbVstqR1NiS8ntxI" class="btn btn-sm btn-accent"><i class="ph ph-arrow-square-out"></i> Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- NADAS -->
+        <div class="project-card reveal" data-tilt>
+          <div class="project-img">
+            <img src="Nadas.jpg" alt="">
+            <div class="project-overlay">
+              <span class="project-type">Java / Full-Stack</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">NADAS</h3>
+            <p class="project-tagline">Disaster Alert &amp; Reporting System</p>
+            <p class="project-desc">Disaster monitoring platform integrating real-time weather, earthquake, and flood APIs with interactive map visualization. Built using MVC + SQLite with automated city-based email alerts and citizen-reporting with admin approval.</p>
+            <div class="project-tech">
+              <span>Java</span><span>JavaFX</span><span>SQLite</span>
+              <span>REST APIs</span><span>MVC</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Hadii-1/NADAS-Natural-and-Artificial-Disaster-Alert-System" class="btn btn-sm btn-outline"><i class="ph ph-github-logo"></i> GitHub</a>
+              <a href="https://www.linkedin.com/posts/ahmad-zakwan-83878331b_java-javafx-softwareengineering-ugcPost-7463957606144049152--oOU?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEIg0m4B3nRXk6yN6s4DbVstqR1NiS8ntxI" class="btn btn-sm btn-accent"><i class="ph ph-arrow-square-out"></i> Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Super Mario -->
+        <div class="project-card reveal" data-tilt>
+          <div class="project-img">
+            <img src="mario.png" alt="">
+            <div class="project-overlay">
+              <span class="project-type">Low-Level / Assembly</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Super Mario Platformer</h3>
+            <p class="project-tagline">Console-Based in Pure x86 Assembly</p>
+            <p class="project-desc">3-stage 2D platformer built entirely in x86 MASM Assembly featuring a custom game loop, ASCII rendering, asynchronous input, gravity, parabolic jumping, mid-air control, and persistent score tracking via file I/O.</p>
+            <div class="project-tech">
+              <span>x86 MASM</span><span>Irvine32</span><span>Low-Level</span>
+              <span>ASCII Rendering</span><span>File I/O</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Hadii-1/Super-Mario" class="btn btn-sm btn-outline"><i class="ph ph-github-logo"></i> GitHub</a>
+              <a href="https://www.linkedin.com/posts/hadi-sajjad_coal-project-mario-style-game-in-x86-assembly-activity-7420808240378200065-fFVy?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEIg0m4B3nRXk6yN6s4DbVstqR1NiS8ntxI" class="btn btn-sm btn-accent"><i class="ph ph-arrow-square-out"></i> Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Economic Network -->
+        <div class="project-card reveal" data-tilt>
+          <div class="project-img">
+             <img src="Network.jpg" alt="2D Space Shooter screenshot" />
+
+            <div class="project-overlay">
+              <span class="project-type">Data Science / Python</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Economic Price Similarity Network</h3>
+            <p class="project-tagline">Graph-Based Market Analysis</p>
+            <p class="project-desc">Processed 18,000+ CPI data points across 17 cities and 51 products. Applied Min-Max normalization, Cosine Similarity, 4 centrality measures, and Hasse diagrams. Generated 90+ visualizations including heatmaps and network graphs.</p>
+            <div class="project-tech">
+              <span>Python</span><span>Pandas</span><span>NumPy</span>
+              <span>Graph Theory</span><span>Visualization</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Hadii-1/Temporal-Network-Analysis" class="btn btn-sm btn-outline"><i class="ph ph-github-logo"></i> GitHub</a>
+              <a href="#" class="btn btn-sm btn-accent"><i class="ph ph-arrow-square-out"></i> Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2D Space Shooter -->
+<div class="project-card reveal" data-tilt>
+  <div class="project-img">
+    <img src="space.jpg" alt="2D Space Shooter screenshot" />
+    <div class="project-overlay">
+      <span class="project-type">Game Dev / C++</span>
+    </div>
+  </div>
+          <div class="project-body">
+            <h3 class="project-title">2D Space Shooter</h3>
+            <p class="project-tagline">OOP Arcade Shooter with Multi-Level Progression</p>
+            <p class="project-desc">OOP-based arcade shooter featuring multi-level progression and custom game state management. Engineered dynamic memory allocation using raw pointers for efficient entity pooling and collision handling.</p>
+            <div class="project-tech">
+              <span>C++</span><span>SFML</span><span>OOP</span>
+              <span>Memory Management</span><span>Collision Detection</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Hadii-1/2D-Space-Shooter" class="btn btn-sm btn-outline"><i class="ph ph-github-logo"></i> GitHub</a>
+              <a href="https://www.linkedin.com/posts/hadi-sajjad_oop-cplusplus-sfml-activity-7420126647682748417-PfJg?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEIg0m4B3nRXk6yN6s4DbVstqR1NiS8ntxI" class="btn btn-sm btn-accent"><i class="ph ph-arrow-square-out"></i> Demo</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- ========== TECH STACK BADGES ========== -->
+  <section class="section techstack-section">
+    <div class="container">
+      <div class="section-label">06 / Stack</div>
+      <h2 class="section-title reveal">Tech Stack</h2>
+      <div class="techstack-badges reveal">
+        <span class="badge float-badge" style="--delay:0s">C++</span>
+        <span class="badge float-badge" style="--delay:0.2s">Python</span>
+        <span class="badge float-badge" style="--delay:0.4s">Java</span>
+        <span class="badge float-badge" style="--delay:0.6s">x86 Assembly</span>
+        <span class="badge float-badge" style="--delay:0.8s">SFML</span>
+        <span class="badge float-badge" style="--delay:1.0s">JavaFX</span>
+        <span class="badge float-badge" style="--delay:0.1s">NumPy</span>
+        <span class="badge float-badge" style="--delay:0.3s">Pandas</span>
+        <span class="badge float-badge" style="--delay:0.5s">Matplotlib</span>
+        <span class="badge float-badge" style="--delay:0.7s">SQLite</span>
+        <span class="badge float-badge" style="--delay:0.9s">REST APIs</span>
+        <span class="badge float-badge" style="--delay:1.1s">Git</span>
+        <span class="badge float-badge" style="--delay:0.15s">Tkinter</span>
+        <span class="badge float-badge" style="--delay:0.35s">NetworkX</span>
+        <span class="badge float-badge" style="--delay:0.55s">Graph Theory</span>
+        <span class="badge float-badge" style="--delay:0.75s">OOP</span>
+        <span class="badge float-badge" style="--delay:0.95s">DSA</span>
+        <span class="badge float-badge" style="--delay:1.15s">MVC</span>
+        <span class="badge float-badge" style="--delay:0.25s">Scikit-Learn</span>
+        <span class="badge float-badge" style="--delay:0.45s">Linear Regression</span>
+        <span class="badge float-badge" style="--delay:0.65s">Logistic Regression</span>
+        <span class="badge float-badge" style="--delay:0.85s">KNN</span>
+        <span class="badge float-badge" style="--delay:1.05s">K-Means++</span>
+        <span class="badge float-badge" style="--delay:0.05s">Supervised Learning</span>
+        <span class="badge float-badge" style="--delay:0.5s">Unsupervised Learning</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATS ========== -->
+  <section class="section section-alt stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <span class="stat-num" data-target="7">0</span>
+          <span class="stat-plus">+</span>
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-num" data-target="18">0</span>
+          <span class="stat-plus">+</span>
+          <span class="stat-label">Technologies</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-num" data-target="1">0</span>
+          <span class="stat-plus">+</span>
+          <span class="stat-label">Years of Experience</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-num" data-target="3">0</span>
+          <span class="stat-plus">+</span>
+          <span class="stat-label">Languages Mastered</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-label">07 / Contact</div>
+      <h2 class="section-title reveal">Get In Touch</h2>
+      <p class="section-subtitle reveal">Whether it's an internship, collaboration, or just a chat — I'd love to hear from you.</p>
+
+      <div class="contact-grid">
+
+        <!-- Info -->
+        <div class="contact-info reveal">
+          <a href="mailto:mhadi7497@gmail.com" class="contact-item">
+            <div class="contact-icon"><i class="ph ph-envelope-simple"></i></div>
+            <div>
+              <p class="contact-item-label">Email</p>
+              <p class="contact-item-value">mhadi7497@gmail.com</p>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/hadi-sajjad" target="_blank" class="contact-item">
+            <div class="contact-icon"><i class="ph ph-linkedin-logo"></i></div>
+            <div>
+              <p class="contact-item-label">LinkedIn</p>
+              <p class="contact-item-value">Connect with me</p>
+            </div>
+          </a>
+          <a href="https://github.com/Hadii-1" target="_blank" class="contact-item">
+            <div class="contact-icon"><i class="ph ph-github-logo"></i></div>
+            <div>
+              <p class="contact-item-label">GitHub</p>
+              <p class="contact-item-value">See my code</p>
+            </div>
+          </a>
+          <div class="contact-item no-link">
+            <div class="contact-icon"><i class="ph ph-map-pin"></i></div>
+            <div>
+              <p class="contact-item-label">Location</p>
+              <p class="contact-item-value">Islamabad, Pakistan</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form-wrap reveal">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your name" autocomplete="off" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="your@email.com" autocomplete="off" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Tell me about your project or opportunity..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full ripple-btn">
+              <i class="ph ph-paper-plane-tilt"></i> Send Message
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; 2025 Muhammad Hadi. All rights reserved.</p>
+        <p class="footer-built">Built with <span class="accent-text">HTML, CSS &amp; JavaScript</span></p>
+        <div class="footer-socials">
+          <a href="mailto:mhadi7497@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
+          <a href="https://www.linkedin.com/in/hadi-sajjad" target="_blank" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+          <a href="https://github.com/Hadii-1" target="_blank" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
