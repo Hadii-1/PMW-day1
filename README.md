@@ -164,7 +164,7 @@ I enjoy building everything from **low-level assembly games** to **AI-powered sy
 What I Learned About 3D Reconstruction and NeRF for PreserveMy.World
 
 Medium Article:
-https://medium.com/@mhadi7497/what-i-learned-about-3d-reconstruction-and-nerf-for-preservemy-world-80b7d6da832d
+https://medium.com/@mhadi7497/what-i-learned-about-3d-reconstruction-exploring-nerf-and-structure-from-motion-for-preservemy-worl-4975c24fb99f
 
 ### Experiment
 - Tiny NeRF reproduction in Google Colab
