@@ -28,3 +28,5 @@ x64
 
 Environment was successfully configured for the PreserveMy.World AI track. Tiny NeRF experiments were completed using Google Colab, while Git and GitHub were used for version control.
 
+<img width="775" height="430" alt="setup" src="https://github.com/user-attachments/assets/d50521a0-9241-4351-943d-117865a1b21a" />
+
