@@ -22,3 +22,7 @@ Successfully reconstructed a 3D scene and generated a 360° view video.
 
 ## Connection to PreserveMy.World
 This technique can be used to digitally preserve heritage sites in 3D without traditional scanning.
+
+# youtube video link :
+
+https://youtu.be/JuH79E8rdKc?si=RxCGv5p0DUD0kDze
