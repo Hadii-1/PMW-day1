@@ -49,3 +49,9 @@ Successfully:
 ## Connection to PreserveMy.World
 
 Structure from Motion can be used to reconstruct historical buildings and cultural heritage sites from ordinary photographs. It provides a practical and accessible way to create digital 3D models for preservation without requiring specialized scanning equipment.
+
+# youtube videos link :
+
+https://youtu.be/Fs5-AaDO21k?si=sbyzmPKSlYwEz5zf
+
+https://youtu.be/i7ierVkXYa8?si=pt2QRje6zRXXj-dq
