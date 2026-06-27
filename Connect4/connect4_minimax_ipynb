@@ -1,0 +1,190 @@
+import math
+import numpy as np
+
+ROWS = 6
+COLS = 7
+PLAYER = 1  # User
+AI = 2      # Computer
+EMPTY = 0
+WINDOW_LENGTH = 4
+
+def create_board():
+    return np.zeros((ROWS, COLS), dtype=int)
+
+def drop_piece(board, row, col, piece):
+    board[row][col] = piece
+
+def is_valid_location(board, col):
+    return board[ROWS-1][col] == EMPTY
+
+def get_next_open_row(board, col):
+    for row in range(ROWS):
+        if board[row][col] == EMPTY:
+            return row
+
+def print_board(board):
+    print(np.flip(board, 0))
+
+def winning_move(board, piece):
+
+    # horizontal
+    for i in range(ROWS):
+        for j in range(COLS-3):
+            if board[i][j] == piece and board[i][j+1] == piece and board[i][j+2] == piece and board[i][j+3] == piece:
+                return True
+
+    # vertical
+    for i in range(ROWS-3):
+        for j in range(COLS):
+            if board[i][j] == piece and board[i+1][j] == piece and board[i+2][j] == piece and board[i+3][j] == piece:
+                return True
+
+    #diagonal
+    for i in range(ROWS-3):
+        for j in range(COLS-3):
+            if board[i][j] == piece and board[i+1][j+1] == piece and board[i+2][j+2] == piece and board[i+3][j+3] == piece:
+                return True
+
+    # secondary diagonal
+    for i in range(3, ROWS):
+        for j in range(COLS-3):
+            if board[i][j] == piece and board[i-1][j+1] == piece and board[i-2][j+2] == piece and board[i-3][j+3] == piece:
+                return True
+
+    return False
+
+def score_position(board, piece):
+
+    score = 0
+    if winning_move(board, AI):
+        score = 100
+
+    elif winning_move(board, PLAYER):
+        score = -100
+
+    return score
+
+def is_terminal_node(board):
+    # checking if the game is finished 
+    finished = False
+    if winning_move(board, PLAYER) or winning_move(board , AI) or len(get_valid_locations(board)) == 0 :
+        finished = True
+    return finished
+
+def minimax(board, depth, maximizingPlayer):
+
+    if depth == 0 or is_terminal_node(board):
+        return score_position(board, AI)
+
+    valid_locations = get_valid_locations(board)
+
+    if maximizingPlayer:
+
+        value = -math.inf
+
+        for col in valid_locations:
+
+            row = get_next_open_row(board, col)
+            temp_board = board.copy()
+
+            drop_piece(temp_board, row, col, AI)
+
+            new_score = minimax(temp_board, depth-1, False)
+
+            if new_score > value:
+                value = new_score
+
+        return value
+
+    else:
+
+        value = math.inf
+
+        for col in valid_locations:
+
+            row = get_next_open_row(board, col)
+            temp_board = board.copy()
+
+            drop_piece(temp_board, row, col, PLAYER)
+
+            new_score = minimax(temp_board, depth-1, True)
+
+            if new_score < value:
+                value = new_score
+
+        return value
+
+def get_valid_locations(board):
+    # locations where moves are valid 
+    locations = []
+    for col in range(COLS):
+        if is_valid_location(board,col):
+            locations.append(col)
+
+    return locations
+
+def best_move(board, depth=4):
+
+    valid_locations = get_valid_locations(board)
+
+    best_score = -math.inf
+    best_col = valid_locations[0]
+
+    for col in valid_locations:
+
+        row = get_next_open_row(board, col)
+        temp_board = board.copy()
+
+        drop_piece(temp_board, row, col, AI)
+
+        score = minimax(temp_board, depth-1, False)
+
+        if score > best_score:
+            best_score = score
+            best_col = col
+
+    return best_col
+
+# Game setup
+board = create_board()
+game_over = False
+turn = 0  # Player goes first
+
+print_board(board)
+while not game_over:
+
+    # Player turn
+    if turn == 0:
+
+        col = int(input("Player choose column (0-6): "))
+
+        if is_valid_location(board, col):
+
+            row = get_next_open_row(board, col)
+            drop_piece(board, row, col, PLAYER)
+
+            if winning_move(board, PLAYER):
+                print("Player wins!")
+                game_over = True
+
+            turn = 1
+            print("\n")
+            print_board(board)
+
+    
+    else:
+
+        col = best_move(board)
+
+        if is_valid_location(board, col):
+
+            row = get_next_open_row(board, col)
+            drop_piece(board, row, col, AI)
+
+            if winning_move(board, AI):
+                print("AI wins!")
+                game_over = True
+
+            turn = 0
+            print("\n")
+            print_board(board)
